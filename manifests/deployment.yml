@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "restaurantkbs-e954"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "restaurantkbs-e954"
+  template:
+    metadata:
+      labels:
+        app: "restaurantkbs-e954"
+    spec:
+      containers:
+        - name: "restaurantkbs-e954"
+          image: "reataurantcn1.azurecr.io/restaurantkbs"
+          ports:
+          - containerPort: 80
